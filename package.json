@@ -1,7 +1,7 @@
 {
   "name": "react-single-spa",
   "version": "0.1.0",
-  "main": "./src/index.tsx",
+  "main": "./public/js/main.js",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
@@ -21,9 +21,11 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts build && npm run copy-js && npm run copy-css",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "copy-js": "cp -v ./build/static/js/main.*.js ./public/js/main.js",
+    "copy-css": "cp -v ./build/static/css/main.*.css ./public/css/main.css"
   },
   "eslintConfig": {
     "extends": [
